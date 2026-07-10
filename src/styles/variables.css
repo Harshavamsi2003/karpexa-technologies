@@ -1,0 +1,30 @@
+:root {
+  /* Brand */
+  --spruce: #103A33;
+  --spruce-900: #0B2A25;
+  --spruce-800: #0E322C;
+  --citron: #C6F24E;
+  --citron-ink: #20340A;
+
+  /* Neutrals */
+  --paper: #F6F7F4;
+  --paper-2: #FFFFFF;
+  --line: #E4E7E1;
+  --ink: #131815;
+  --muted: #5D6B63;
+  --muted-dark: #A9BEB4;
+
+  /* Type */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+
+  /* Layout */
+  --maxw: 1240px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --nav-h: 78px;
+  --radius: 14px;
+  --radius-lg: 20px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,3 @@
+/* Home page assembles shared section components; no extra styles needed
+   beyond what each component's stylesheet provides. Kept for future tweaks. */
+.home { display: block; }

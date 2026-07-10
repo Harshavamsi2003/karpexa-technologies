@@ -1,0 +1,11 @@
+.nf {
+  min-height: 80vh; display: flex; align-items: center;
+  background: var(--spruce); color: #fff; padding-top: var(--nav-h);
+}
+.nf__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.nf__code {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(5rem, 18vw, 11rem); line-height: 1; color: #fff; letter-spacing: -0.04em;
+}
+.nf__code .em { color: var(--citron); }
+.nf__msg { color: #C6D6CD; max-width: 44ch; font-size: 1.1rem; }

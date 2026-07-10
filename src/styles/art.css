@@ -1,0 +1,13 @@
+/* -----------------------------------------------------------------
+   Shared card art — a cohesive, muted palette drawn from the brand:
+   deep spruce/teal family with two restrained accents. No rainbow.
+   Used by the home solution cards and the "related capabilities" cards.
+   ----------------------------------------------------------------- */
+.g1 { background: radial-gradient(115% 115% at 30% 22%, #1F5E52, #0B2A25); }
+.g2 { background: radial-gradient(115% 115% at 68% 28%, #2A6E63, #0C2F28); }
+.g3 { background: radial-gradient(115% 115% at 38% 68%, #3C6B52, #10291F); }
+.g4 { background: radial-gradient(115% 115% at 62% 38%, #2C5F6E, #0B242B); }
+.g5 { background: radial-gradient(115% 115% at 32% 60%, #6B6A34, #22230F); }
+.g6 { background: radial-gradient(115% 115% at 60% 48%, #1E7A6A, #08302A); }
+.g7 { background: radial-gradient(115% 115% at 48% 30%, #35566E, #0D1E28); }
+.g8 { background: radial-gradient(115% 115% at 40% 62%, #4A6B3A, #142612); }

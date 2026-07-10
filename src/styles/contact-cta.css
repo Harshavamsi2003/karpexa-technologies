@@ -1,0 +1,73 @@
+/* =====================================================================
+   HOME — Contact CTA band (talks to the /contact page)
+   A premium spruce panel with a citron glow, two-column on desktop,
+   stacked on mobile.
+   ===================================================================== */
+
+.ccta { background: var(--paper); padding-block: clamp(20px, 5vw, 40px) clamp(64px, 8vw, 100px); }
+
+.ccta__panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--spruce);
+  border-radius: 28px;
+  padding: clamp(38px, 5vw, 68px);
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  box-shadow: 0 40px 80px -50px rgba(9, 30, 26, 0.7);
+}
+.ccta__glow {
+  position: absolute;
+  top: -160px; right: -120px;
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, rgba(198, 242, 78, 0.16), transparent 66%);
+  pointer-events: none;
+}
+
+.ccta__content { position: relative; z-index: 1; }
+.ccta__title {
+  color: #fff;
+  font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 12px 0 16px;
+  max-width: 20ch;
+}
+.ccta__title .em { color: var(--citron); }
+.ccta__sub { color: #C6D6CD; font-size: 1.02rem; line-height: 1.6; max-width: 52ch; }
+.ccta__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+/* right column — reassurance points */
+.ccta__points {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 16px;
+  padding-left: clamp(0px, 3vw, 32px);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+.ccta__points li {
+  display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start;
+  color: #E4EDE8; font-size: 0.98rem; line-height: 1.4;
+}
+.ccta__tick {
+  position: relative; flex: none; margin-top: 2px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(198, 242, 78, 0.2);
+}
+.ccta__tick::after {
+  content: ''; position: absolute; left: 7px; top: 4px;
+  width: 4px; height: 8px;
+  border: solid var(--citron); border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .ccta__panel { grid-template-columns: 1fr; gap: 34px; }
+  .ccta__points { padding-left: 0; border-left: none; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+}
+@media (max-width: 460px) {
+  .ccta__actions { flex-direction: column; align-items: stretch; }
+  .ccta__actions .btn { justify-content: center; }
+}

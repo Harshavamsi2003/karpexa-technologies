@@ -1,0 +1,20 @@
+.pagehead {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 80% -20%, rgba(198, 242, 78, 0.1), transparent 60%),
+    var(--spruce);
+  color: #fff;
+  padding-top: calc(var(--nav-h) + clamp(56px, 9vw, 110px));
+  padding-bottom: clamp(50px, 8vw, 90px);
+  overflow: hidden;
+}
+.pagehead__inner { position: relative; z-index: 1; max-width: 900px; }
+.pagehead__title {
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800;
+  margin: 20px 0 18px;
+  max-width: 18ch;
+}
+.pagehead__title .em { color: var(--citron); }
+.pagehead__sub { color: #C6D6CD; font-size: clamp(1.02rem, 1.5vw, 1.24rem); max-width: 58ch; }

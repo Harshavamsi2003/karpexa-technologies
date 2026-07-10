@@ -1,0 +1,102 @@
+@import './variables.css';
+@import './art.css';
+
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(64px, 9vw, 120px); }
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--citron-ink);
+}
+.eyebrow--on-dark { color: var(--citron); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 1px solid transparent;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.3s, border-color 0.3s, color 0.3s;
+}
+.btn--primary { background: var(--citron); color: var(--citron-ink); }
+.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -14px rgba(198, 242, 78, 0.6); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn--ghost-dark { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.35); }
+.btn--ghost-dark:hover { border-color: #fff; }
+.btn--ghost-light { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn--ghost-light:hover { border-color: var(--muted); }
+
+/* Focus + skip link */
+:focus-visible { outline: 2px solid var(--spruce); outline-offset: 3px; border-radius: 4px; }
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--citron); color: var(--citron-ink);
+  padding: 10px 18px; border-radius: 0 0 10px 0; font-weight: 600;
+}
+.skip-link:focus { left: 0; }
+
+/* Scroll reveal — premium, GPU-friendly, tuned for mobile too */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease), filter 0.85s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* slightly shorter travel + snappier on phones so it feels lively, not slow */
+@media (max-width: 768px) {
+  .reveal { transform: translateY(22px) scale(0.99); transition-duration: 0.7s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

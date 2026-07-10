@@ -1,0 +1,75 @@
+/* =====================================================================
+   SECTORS PAGE
+   GREEN RULE: spruce only at the hero (pageheader.css) and CTA (.secx-cta).
+   Cards here use a distinct design (left accent + description + note pill).
+   ===================================================================== */
+
+/* ---------- Intro + facts ---------- */
+.secx-intro { background: var(--paper-2); padding-block: clamp(52px, 7vw, 92px); }
+.secx-intro__wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: center; }
+.secx-lead {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.4; letter-spacing: -0.01em;
+  color: var(--ink); margin-top: 14px; max-width: 46ch;
+}
+.secx-facts {
+  display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.secx-fact { background: var(--paper); padding: 26px 20px; display: flex; flex-direction: column; justify-content: center; gap: 8px; min-height: 122px; }
+.secx-fact__v { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--spruce); letter-spacing: -0.03em; line-height: 1; }
+.secx-fact__l { font-size: 0.82rem; color: var(--muted); }
+
+/* ---------- Sector cards ---------- */
+.secx { background: var(--paper); padding-block: clamp(56px, 7vw, 100px); }
+.secx__grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 16px; }
+.secx-card {
+  position: relative; display: flex; flex-direction: column;
+  padding: 30px 28px 32px;
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), border-color 0.45s var(--ease);
+}
+.secx-card:hover { transform: translateY(-5px); border-color: transparent; box-shadow: 0 24px 46px -26px rgba(12, 30, 26, 0.22); }
+.secx-card__accent { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--citron); transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s var(--ease); }
+.secx-card:hover .secx-card__accent { transform: scaleY(1); }
+.secx-card__name { font-size: 1.28rem; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 12px; max-width: 16ch; }
+.secx-card__desc { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+.secx-card__note {
+  margin-top: auto; align-self: flex-start;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--spruce); padding: 7px 13px; border-radius: 999px;
+  background: rgba(16, 58, 51, 0.06); border: 1px solid var(--line);
+}
+
+/* ---------- How we adapt ---------- */
+.secx-how { background: var(--paper-2); padding-block: clamp(56px, 7vw, 100px); }
+.secx-how__head { margin-bottom: 40px; max-width: 760px; }
+.secx-how__head h2 { font-size: clamp(1.7rem, 3.2vw, 2.45rem); margin-top: 12px; }
+.secx-how__grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 16px; }
+.secx-step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 30px 28px 32px; }
+.secx-step__bar { display: block; width: 34px; height: 3px; border-radius: 2px; background: var(--citron); margin-bottom: 20px; }
+.secx-step h3 { font-size: 1.24rem; color: var(--ink); margin-bottom: 10px; }
+.secx-step p { color: var(--muted); font-size: 0.96rem; line-height: 1.6; }
+
+/* ---------- GREEN 2 — CTA ---------- */
+.secx-cta { background: var(--spruce); color: #fff; padding-block: clamp(70px, 9vw, 120px); text-align: center; position: relative; overflow: hidden; }
+.secx-cta::before { content: ''; position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%); width: 640px; height: 420px; background: radial-gradient(circle, rgba(198, 242, 78, 0.1), transparent 66%); pointer-events: none; }
+.secx-cta__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.secx-cta h2 { color: #fff; font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin-top: 6px; }
+.secx-cta__sub { color: #C6D6CD; max-width: 52ch; }
+.secx-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .secx__grid { grid-template-columns: 1fr 1fr; }
+  .secx-how__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) { .secx-intro__wrap { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 640px) {
+  .secx__grid { grid-template-columns: 1fr; }
+  .secx-facts { grid-template-columns: 1fr; }
+  .secx-cta__actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .secx-cta__actions .btn { justify-content: center; }
+}
